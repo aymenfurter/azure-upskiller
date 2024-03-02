@@ -65,6 +65,13 @@ namespace Microsoft.SemanticKernel.Connectors.Memory.AzureCognitiveSearchVector
             {
                 Vector = vector,
                 Size = 10,
+                QueryType = SearchQueryType.Semantic,
+                SemanticSearch = new SemanticSearchOptions
+                {
+                    SemanticConfigurationName = "standard",
+                    QueryCaption = new(QueryCaptionType.Extractive),
+                    QueryAnswer = new(QueryAnswerType.Extractive)
+                },
                 Select = { "Text", "Description", "ExternalSourceName", "Id" }
             };
 
